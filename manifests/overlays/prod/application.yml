@@ -4,6 +4,9 @@ spring:
     url: jdbc:postgresql://cepg-aa-std-db.postgres.database.azure.com:5432/postgres
     username: cepgdb
     password: ktds!1234
+    hikari:
+      maximum-pool-size: 3 #최대 pool 크기
+      minimum-idle: 2 #최소 pool 크기
   jpa:
     show-sql: true
     hibernate:
