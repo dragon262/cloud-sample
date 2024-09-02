@@ -29,4 +29,4 @@ management:
         include: "*"
 
 pvc:
-  path: /root
+  path: /tmp
