@@ -65,7 +65,7 @@ jobs:
     
     - run: |
             docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/troubleshooting:latest -f Dockerfile .
-            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/troubleshooting:latest ${{ secrets.STAP_ACR_LOGIN_SERVER }}/troubleshooting:lastest
+            docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/troubleshooting:latest ${{ secrets.STAP_ACR_LOGIN_SERVER }}/troubleshooting:latest
 
     - name: 'Push image'
       uses: azure/docker-login@v1
@@ -75,4 +75,4 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-            docker push ${{ secrets.STAP_ACR_LOGIN_SERVER }}/troubleshooting:lastest
+            docker push ${{ secrets.STAP_ACR_LOGIN_SERVER }}/troubleshooting:latest
