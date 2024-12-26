@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   name: cloud-sample-ingress
 spec:
-  ingressClassName: ingress-internal
+  # kubectl get ingressclass
+  ingressClassName: ingress-internal 
   rules:
   - host: cloud-sample-prod.pg-aa.kubepia.net
     http:
