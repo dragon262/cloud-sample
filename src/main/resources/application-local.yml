@@ -12,15 +12,17 @@ spring:
     hibernate:
       ddl-auto: create-drop
     defer-datasource-initialization: true
-#    properties:
-#      hibernate:
-#        format_sql: true
+  #    properties:
+  #      hibernate:
+  #        format_sql: true
   sql:
     init:
       mode: always
 
 server:
   port: 8080
+  # forward-headers-strategy: native
+  forward-headers-strategy: framework
 
 management:
   endpoints:

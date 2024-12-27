@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: springboot-clientip-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  # kubectl get ingressclass
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /test(/|$)(.*)
+            backend:
+              service:
+                name: springboot-clientip-test2
+                port:
+                  number: 8081
+            pathType: ImplementationSpecific

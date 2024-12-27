@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-clientip-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springboot-clientip-test
+  template:
+    metadata:
+      labels:
+        app: springboot-clientip-test
+    spec:
+      containers:
+        - name: springboot-clientip-test
+          image: clientiptest.azurecr.io/springboot-clientip-test:v2
+          ports:
+            - containerPort: 8080
